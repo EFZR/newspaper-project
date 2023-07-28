@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { View, Text } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { View, FlatList } from "react-native";
 import { getNews } from "../api/news";
+import New from "../components/New"
 import styles from '../styles/home';
 
 
@@ -16,8 +16,13 @@ const News = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlatList
+      data={news}
+      keyExtractor={(item) => item.url}
+      renderItem={({ item }) => (
+        <New item={item} />
+      )}
+      />
     </View>
   );
 };
