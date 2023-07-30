@@ -1,22 +1,19 @@
-import { Text, Image, Pressable } from "react-native";
-
+import { Text, Image, Pressable, View } from "react-native";
+import styles from "../styles/home";
 type TopNewProps = {
   item: {
     title: string;
     urlToImage: string;
-    description: string;
   };
 };
 
 const TopNew = (item: TopNewProps) => {
   return (
-    <Pressable>
-      <Image
-        style={{ width: 50, height: 50 }}
-        source={{ uri: item.item.urlToImage }}
-      />
-      <Text style={{ fontWeight: "bold" }}>{item.item.title}</Text>
-      <Text>{item.item.description}</Text>
+    <Pressable style={styles.pressable}>
+      <Image style={styles.image} source={{ uri: item.item.urlToImage }} />
+      <View style={styles.text_container}>
+        <Text style={styles.text}>{item.item.title}</Text>
+      </View>
     </Pressable>
   );
 };
