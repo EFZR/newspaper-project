@@ -1,4 +1,5 @@
-import { Text, Image, Pressable } from "react-native";
+import styles from "../styles/home";
+import { Text, Image, View, Pressable } from "react-native";
 
 type NewProps = {
   item: {
@@ -7,17 +8,19 @@ type NewProps = {
   }
 }
 
-const New = (item: NewProps ) => {
+const New = (item: NewProps) => {
   return (
-    <Pressable>
+    <Pressable style={styles.pressable}>
       <Image
-        style={{ width: 50, height: 50 }}
+        style={styles.image}
         source={{ uri: item.item.urlToImage }}
       />
-      <Text>
-        {item.item.title}
-      </Text>
-    </Pressable> 
+      <View style={styles.text_container}>
+        <Text style={styles.text}>
+          {item.item.title}
+        </Text>
+      </View>
+    </Pressable>
   )
 }
 
