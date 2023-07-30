@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Home from "../screens/Home";
-import Search from "../screens/Search";
+import TopNew from "../screens/TopNew";
 import Configs from "../screens/Configs";
 
 const Tab = createBottomTabNavigator();
@@ -10,37 +10,41 @@ const Routes = () => {
   return (
     <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
-        name="Search"
-        component={Search}
+        name="Trending 📈"
+        component={TopNew}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: "Trending",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={size} />
-          )
+            <MaterialCommunityIcons
+              name="trending-up"
+              color={color}
+              size={size}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
-          )
+          ),
         }}
       />
       <Tab.Screen
         name="Configs"
         component={Configs}
         options={{
-          tabBarLabel: 'Configs',
+          tabBarLabel: "Configs",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="cog" color={color} size={size} />
-          )
+          ),
         }}
       />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
 export default Routes;
