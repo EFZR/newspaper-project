@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 const Routes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="News 📭"
       screenOptions={{
         tabBarActiveTintColor: colors.secondary,
       }}
@@ -34,7 +34,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="News"
+        name="News 📭"
         component={Home}
         options={{
           tabBarLabel: "News",

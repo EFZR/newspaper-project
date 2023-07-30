@@ -13,9 +13,13 @@ const styles = StyleSheet.create({
   },
   pressable: {
     flex: 1,
+    padding: 5,
     flexDirection: "row",
     marginBottom: 20,
     backgroundColor: colors.primary,
+  },
+  active_pressable: {
+    backgroundColor: "#F1F1F1",
   },
   image: {
     width: 125,
@@ -28,6 +32,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.tertiary,
+    fontSize: 12,
     fontWeight: "bold",
     justifyContent: "center",
   }

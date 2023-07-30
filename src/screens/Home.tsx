@@ -15,6 +15,7 @@ interface NewProps {
 
 const News = () => {
   const [news, setNews] = useState([]);
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     getNews().then((data) => {
@@ -27,11 +28,17 @@ const News = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        style={styles.flatlist}
+        onScrollEndDrag={() => {
+          setScroll(false)
+        }}
+        onScrollBeginDrag={() => {
+          setScroll(true)
+        }}
         data={news}
+        style={styles.flatlist}
         keyExtractor={(item: NewProps) => item.url}
         renderItem={({ item }) => (
-          <New item={item} />
+          <New item={item} scroll={scroll} />
         )}
       />
     </View>

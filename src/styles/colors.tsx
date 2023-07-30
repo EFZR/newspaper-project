@@ -1,10 +1,10 @@
 export const colors = {
-  primary: '#FBFBFB',
-  secondary: '#DC8D03',
+  primary: '#FAFAFA',
+  secondary: '#EE8405',
   tertiary: '#333333',
 }
 export const colors_dark = {
   primary: '#333333',
-  secondary: '#DC8D03',
+  secondary: '#EE8405',
   tertiary: '#F6F6F6',
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, FlatList } from "react-native";
 import { getNews, getTopNews } from "../api/news";
-import TopNew from "../components/TopNew";
+import New from "../components/New";
 import styles from "../styles/home";
 
 interface TopNewProps {
@@ -15,6 +15,8 @@ interface TopNewProps {
 
 const News = () => {
   const [news, setNews] = useState([]);
+  const [scroll, setScroll] = useState(false);
+
   useEffect(() => {
     getTopNews().then((data) => {
       if (data.status === "ok") {
@@ -25,10 +27,16 @@ const News = () => {
   return (
     <View style={styles.container}>
       <FlatList
+        onScrollEndDrag={() => {
+          setScroll(false)
+        }}
+        onScrollBeginDrag={() => {
+          setScroll(true)
+        }}
         style={styles.flatlist}
         data={news}
         keyExtractor={(item: TopNewProps) => item.url}
-        renderItem={({ item }) => <TopNew item={item} />}
+        renderItem={({ item }) => <New item={item} scroll={scroll} />}
       />
     </View>
   );
