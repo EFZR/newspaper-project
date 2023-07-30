@@ -11,7 +11,6 @@ interface Props {
   scroll: Boolean;
 }
 
-
 const New: React.FC<Props> = ({item, scroll}) => {
   const [active, setActive] = useState(false);
 
