@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: colors.primary,
   },
   image: {
     width: "100%",

@@ -2,9 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../styles/colors";
 import NewsRoutes from "./newsRoutes";
-import TopNew from "../screens/TopNew";
+import TrendingRoutes from "./trendingRoutes";
 import Configs from "../screens/Configs";
-import Detail from "../screens/Details";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +17,7 @@ const Routes = () => {
     >
       <Tab.Screen
         name="Trending 📈"
-        component={TopNew}
+        component={TrendingRoutes}
         options={{
           headerTitleStyle: {
             color: colors.tertiary,

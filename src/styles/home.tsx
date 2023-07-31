@@ -4,7 +4,7 @@ import { colors } from './colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: colors.primary,
     padding: 10,
   },
   flatlist: {
