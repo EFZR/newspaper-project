@@ -34,10 +34,10 @@ const News: React.FC<Props> = ({ navigation }) => {
     <View style={styles.container}>
       <FlatList
         onScrollEndDrag={() => {
-          setScroll(false)
+          setScroll(false);
         }}
         onScrollBeginDrag={() => {
-          setScroll(true)
+          setScroll(true);
         }}
         style={styles.flatlist}
         data={news}
