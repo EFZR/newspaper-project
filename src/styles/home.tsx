@@ -11,6 +11,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.primary,
   },
+  text_input: {
+    height: 40,
+    borderColor: colors.secondary,
+    borderWidth: .5,
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10,
+    color: colors.tertiary,
+  },
   pressable: {
     flex: 1,
     padding: 5,
@@ -35,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
     justifyContent: "center",
-  }
+  },
 });
 
 export default styles;
