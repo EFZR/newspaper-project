@@ -1,17 +1,24 @@
 import React from "react";
-import { Text, Image, View, Pressable } from "react-native";
 import { useState } from "react";
+import { Text, Image, View, Pressable } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack/lib/typescript/src/types";
 import styles from "../styles/home";
 
 interface Props {
   item: {
     title: string;
     urlToImage: string;
+    description: string;
+    publishedAt: string;
+    author: string;
+    content: string;
+    url: string;
   }
   scroll: Boolean;
+  navigation: StackNavigationProp<any>;
 }
 
-const New: React.FC<Props> = ({item, scroll}) => {
+const New: React.FC<Props> = ({ item, scroll, navigation }) => {
   const [active, setActive] = useState(false);
 
   const onTouchStart = () => {
@@ -23,16 +30,23 @@ const New: React.FC<Props> = ({item, scroll}) => {
     }
   }
 
-  const onTouchEnd = (name: String) => {
+  const onTouchEnd = () => {
     if (!scroll) {
-      alert(name);
+      navigation.navigate("Details", {
+        title: item.title,
+        image: item.urlToImage,
+        description: item.description,
+        publishedAt: item.publishedAt,
+        content: item.content,
+        url: item.url,
+      });
     }
   }
 
   return (
     <Pressable style={[styles.pressable, active && styles.active_pressable]}
       onTouchStart={onTouchStart}
-      onTouchEnd={() => onTouchEnd(item.title)}
+      onTouchEnd={() => onTouchEnd()}
     >
       <Image
         style={styles.image}

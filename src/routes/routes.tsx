@@ -1,16 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../styles/colors";
-import Home from "../screens/Home";
+import NewsRoutes from "./newsRoutes";
 import TopNew from "../screens/TopNew";
 import Configs from "../screens/Configs";
+import Detail from "../screens/Details";
 
 const Tab = createBottomTabNavigator();
 
 const Routes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="News🔭"
+      initialRouteName="News"
       screenOptions={{
         tabBarActiveTintColor: colors.secondary,
       }}
@@ -35,7 +36,7 @@ const Routes = () => {
       />
       <Tab.Screen
         name="News"
-        component={Home}
+        component={NewsRoutes}
         options={{
           tabBarLabel: "News",
           tabBarIcon: ({ color, size }) => (

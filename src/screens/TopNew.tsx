@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, FlatList } from "react-native";
-import { getNews, getTopNews } from "../api/news";
+import { getTopNews } from "../api/news";
+import { StackNavigationProp } from "@react-navigation/stack/lib/typescript/src/types";
 import New from "../components/New";
 import styles from "../styles/home";
 
@@ -11,9 +12,14 @@ interface TopNewProps {
   urlToImage: string;
   url: string;
   content: string;
+  publishedAt: string;
 }
 
-const News = () => {
+interface Props {
+  navigation: StackNavigationProp<any>;
+}
+
+const News: React.FC<Props> = ({ navigation }) => {
   const [news, setNews] = useState([]);
   const [scroll, setScroll] = useState(false);
 
@@ -36,7 +42,7 @@ const News = () => {
         style={styles.flatlist}
         data={news}
         keyExtractor={(item: TopNewProps) => item.url}
-        renderItem={({ item }) => <New item={item} scroll={scroll} />}
+        renderItem={({ item }) => <New item={item} scroll={scroll} navigation={navigation} />}
       />
     </View>
   );
