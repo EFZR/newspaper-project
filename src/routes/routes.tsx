@@ -3,6 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../styles/colors";
 import NewsRoutes from "./newsRoutes";
 import TrendingRoutes from "./trendingRoutes";
+import Logout from "../screens/Logout";
 
 
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,25 @@ const Routes = () => {
           },
         }}
       />
+      <Tab.Screen
+        name="Logout"
+        component={Logout}
+        options={{
+          tabBarLabel: "Logout",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="logout"
+              color={color}
+              size={size}
+            />
+          ),
+          headerTitleStyle: {
+            color: colors.tertiary,
+            fontWeight: "bold",
+          },
+        }}
+      />
+
     </Tab.Navigator>
   );
 };

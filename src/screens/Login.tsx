@@ -50,7 +50,7 @@ export const Login: FC<Props> = ({ navigation }) => {
       <Text style={styles.header}>SIGN IN</Text>
       <TextInput
         style={[styles.input, focusEmail && styles.input_active]}
-        placeholder="email"
+        placeholder="Email"
         onFocus={() => setFocusEmail(true)}
         onBlur={() => setFocusEmail(false)}
         value={email}
@@ -58,9 +58,10 @@ export const Login: FC<Props> = ({ navigation }) => {
       />
       <TextInput
         style={[styles.input, focusPassword && styles.input_active]}
-        placeholder="password"
+        placeholder="Password"
         onFocus={() => setFocusPassword(true)}
         onBlur={() => setFocusPassword(false)}
+        secureTextEntry={true}
         value={password}
         onChangeText={setPassword}
       />

@@ -42,6 +42,7 @@ export const Signup: FC<Props> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {error !== "" && <Text style={styles.error}>{error}</Text>}
       <Text style={styles.header}>SIGN UP</Text>
       <TextInput
         style={[styles.input, focusName && styles.input_active]}
@@ -72,6 +73,7 @@ export const Signup: FC<Props> = ({ navigation }) => {
         placeholder="Password"
         onFocus={() => setFocusPassword(true)}
         onBlur={() => setFocusPassword(false)}
+        secureTextEntry={true}
         value={password}
         onChangeText={setPassword}
       />

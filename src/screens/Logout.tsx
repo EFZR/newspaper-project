@@ -1,11 +1,13 @@
-import { View, Text } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { useAuth } from "../components/AuthContext";
+import { View } from "react-native";
 
+const Logout = () => {
+  const { setIsLogged } = useAuth();
+  useEffect(() => {
+    setIsLogged(false);
+  }, []);
+  return <View />;
+}
 
-const Configs = () => {
-  return (
-    <></>
-  );
-};
-
-export default Configs;
+export default Logout;
