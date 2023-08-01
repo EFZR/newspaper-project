@@ -41,6 +41,13 @@
       "surname": "Zapata",
       "email": "szapata@mail.com",
       "password": "123456"
+    },
+    {
+      "id": "ykzttn83h",
+      "name": "Jose",
+      "surname": "Lainez",
+      "email": "jlainez@mail.com",
+      "password": "654321"
     }
   ]
 }

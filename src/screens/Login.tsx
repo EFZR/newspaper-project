@@ -43,6 +43,12 @@ export const Login: FC<Props> = ({ navigation }) => {
     }
   };
 
+  const handleForgotPassword = () => {
+    setError("Contact your administrator");
+    setTimeout(() => {
+      setError("");
+    }, 3000);
+  }
 
   return (
     <View style={styles.container}>
@@ -65,7 +71,7 @@ export const Login: FC<Props> = ({ navigation }) => {
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity style={styles.button_end}>
+      <TouchableOpacity style={styles.button_end} onPress={handleForgotPassword}>
         <Text style={styles.text_end}>Forgot Password</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button_principal} onPress={
