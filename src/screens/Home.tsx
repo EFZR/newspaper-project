@@ -36,9 +36,7 @@ const News: FC<Props> = ({ navigation }) => {
         }
       })
       .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        setLoading(false);
       });
   }, []);
 
@@ -51,9 +49,7 @@ const News: FC<Props> = ({ navigation }) => {
           }
         })
         .finally(() => {
-          setTimeout(() => {
-            setLoading(false);
-          }, 1000);
+          setLoading(false);
         });
     });
   }, [navigation]);
@@ -78,10 +74,8 @@ const News: FC<Props> = ({ navigation }) => {
         }
       })
       .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-          textInput.current?.clear();
-        }, 1000);
+        setLoading(false);
+        textInput.current?.clear();
       });
   };
 
@@ -108,7 +102,7 @@ const News: FC<Props> = ({ navigation }) => {
                   ref={textInput}
                   style={styles.text_input}
                   placeholder="Search..."
-                  placeholderTextColor="#CECECE"
+                  placeholderTextColor="#B8B8B8"
                   onSubmitEditing={handleSearch}
                 />
                 <FlatList

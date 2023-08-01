@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
   },
   text_input: {
     height: 40,
-    borderColor: colors.secondary,
-    borderWidth: .5,
+    backgroundColor: "#E0E0E0",
     borderRadius: 5,
     padding: 10,
     marginBottom: 10,

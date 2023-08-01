@@ -32,9 +32,7 @@ const News: React.FC<Props> = ({ navigation }) => {
           setNews(data.articles);
         }
       }).finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        setLoading(false);
       });
   }, []);
 
