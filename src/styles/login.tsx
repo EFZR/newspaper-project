@@ -58,6 +58,17 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
   },
+  error: {
+    padding: 10,
+    marginVertical: 10,
+    color: colors.primary,
+    backgroundColor: colors.error,
+    width: "80%",
+    fontSize: 15,
+    fontWeight: "bold",
+    textAlign: "center",
+    borderRadius: 5,
+  }
 });
 
 

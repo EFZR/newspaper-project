@@ -5,8 +5,6 @@ import { AuthContext } from "./src/components/AuthContext";
 import Routes from "./src/routes/routes";
 import LoginRoutes from "./src/routes/loginRoutes";
 
-
-
 export default function App() {
   const [isLogged, setIsLogged] = useState<boolean>(false);
   return (
@@ -19,5 +17,3 @@ export default function App() {
     </AuthContext.Provider>
   );
 }
-
-

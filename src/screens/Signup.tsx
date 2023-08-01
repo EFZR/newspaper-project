@@ -1,10 +1,20 @@
 import React, { FC, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { useAuth } from "../components/AuthContext";
+import { createId } from "../utils/helpers";
+import { createUser } from "../api/users";
 import styles from "../styles/login";
 
 interface Props {
   navigation: StackNavigationProp<any>;
+}
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
 }
 
 export const Signup: FC<Props> = ({ navigation }) => {
@@ -17,36 +27,56 @@ export const Signup: FC<Props> = ({ navigation }) => {
   const [focusSurname, setFocusSurname] = useState<boolean>(false)
   const [focusEmail, setFocusEmail] = useState<boolean>(false)
   const [focusPassword, setFocusPassword] = useState<boolean>(false)
+  const { setIsLogged } = useAuth();
+
+  const handleSignup = async () => {
+    if (!name || !surname || !email || !password) {
+      setError("Please fill all the fields");
+      return;
+    }
+    const id = createId();
+    const user = { id, name, surname, email, password };
+    createUser(user);
+    setIsLogged(true);
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>SIGN UP</Text>
       <TextInput
         style={[styles.input, focusName && styles.input_active]}
-        placeholder="name"
+        placeholder="Name"
         onFocus={() => setFocusName(true)}
         onBlur={() => setFocusName(false)}
+        value={name}
+        onChangeText={setName}
       />
       <TextInput
         style={[styles.input, focusSurname && styles.input_active]}
-        placeholder="surname"
+        placeholder="Surname"
         onFocus={() => setFocusSurname(true)}
         onBlur={() => setFocusSurname(false)}
+        value={surname}
+        onChangeText={setSurname}
       />
       <TextInput
         style={[styles.input, focusEmail && styles.input_active]}
-        placeholder="email"
+        placeholder="Email"
         onFocus={() => setFocusEmail(true)}
         onBlur={() => setFocusEmail(false)}
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={[styles.input, focusPassword && styles.input_active]}
-        placeholder="password"
+        placeholder="Password"
         onFocus={() => setFocusPassword(true)}
         onBlur={() => setFocusPassword(false)}
+        value={password}
+        onChangeText={setPassword}
       />
-      <TouchableOpacity style={styles.button_principal}>
-        <Text style={styles.text_principal}>LOG IN</Text>
+      <TouchableOpacity style={styles.button_principal} onPress={() => handleSignup()}>
+        <Text style={styles.text_principal}>CREATE & LOG IN</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button_center}
