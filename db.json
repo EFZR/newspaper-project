@@ -48,6 +48,34 @@
       "surname": "Lainez",
       "email": "jlainez@mail.com",
       "password": "654321"
+    },
+    {
+      "id": "vkkbtr2h8",
+      "name": "Emerson",
+      "surname": "Zapata",
+      "email": "ezapata@gmail.com",
+      "password": "1"
+    },
+    {
+      "id": "3bzbeise2",
+      "name": "Emerson",
+      "surname": "Zapata",
+      "email": "emerson@mail.com",
+      "password": "25SuamY06"
+    },
+    {
+      "id": "z2rkoi13k",
+      "name": "bessy",
+      "surname": "Rivas",
+      "email": "bessy@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": "hrwpjmy3p",
+      "name": "David",
+      "surname": "Hacelhuff",
+      "email": "dhacel@mail.com",
+      "password": "123456"
     }
   ]
 }

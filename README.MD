@@ -1,20 +1,20 @@
 # NEWSPAPER - PROJECT
 
-## Description
+## Description 🚀
 
-The project is a college project made by the Group #4, from the 4th year of the Computer Science course at the University of UNICAH, in Honduras.
-This has the purpose of creating a newspaper website, where the user can read the news, through an API taken from the [News API](https://newsapi.org/).
-We enjoy and learn a lot from this project, and we hope you enjoy it too!
-A greeting from the group #4 and Honduras 💗!
+The project is a college 🎓 project made by the Group #4, from the 4th year of the Computer Science course at the University of UNICAH 🏛, in Honduras.
+This has the purpose of creating a newspaper Mobile app, where the user can read the news, through an API taken from the [News API](https://newsapi.org/).
+We enjoy and learn ⚡ a lot from this project, and we hope you enjoy it too!
+A greeting from Honduras and the group #4 💗!
 
 
-## Dependecies
+## Dependecies 📝
 
 - [NodeJS v18.16.0](https://nodejs.org/en/)
 - [NPM v9.5.1](https://www.npmjs.com/)
 - [Expo CLI v0.10.11](https://docs.expo.dev/)
 
-## Libraries
+## Libraries 📚
 
 - @babel/core@7.22.9
 - @react-navigation/bottom-tabs@6.5.8
@@ -38,7 +38,7 @@ A greeting from the group #4 and Honduras 💗!
 - react@18.2.0
 - typescript@5.1.6
 
-## Installation
+## Installation 📦
 
 - Find out your [IP address]
 - Clone the repository
